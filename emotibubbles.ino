@@ -27,15 +27,17 @@ struct Bubble {
   int LEDStripIndex; // to index into LedStripColorHue and LedStripColorIntensity arrays
 };
 
-
+/* Instantiate objects for each of the specific emotibubbles on the pillow
+   Each object is instantiated with the pin numbers relevant to the wiring for each emotion.
+   */
 Bubble emotions[EMOTIONS_LENGTH] = {
 
-  {0, 30, "happy", {13, 12, 0},4}, // for happy; has red and green LEDs old vib bubble: 42
-  {A1, 52, "sad", {0,0,9},0},  // for sad; has only blue LED 
-  {A2, 23, "anger", {6,0,0},1}, // for anger; has only red LED 
-  {A3, 40, "surprise", {10,0,11},5}, 
-  {A4, 31, "fear", {0, 8, 0},2}, // for  fear; has green LEDs
-  {A5, 26, "disgust", {2, 0, 3},3}, 
+  {0, 30, "happy", {13, 12, 0},4}, // uses red and green LEDs
+  {A1, 52, "sad", {0,0,9},0},  // uses only blue LED 
+  {A2, 23, "anger", {6,0,0},1}, // only uses red LED 
+  {A3, 40, "surprise", {10,11,0},5}, // uses only red and green LEDs
+  {A4, 31, "fear", {0, 8, 0},2}, // uses only green LED
+  {A5, 26, "disgust", {2, 0, 3},3}, // uses only red and blue LEDs
 };
 
 // Initialize the LED strip lights
